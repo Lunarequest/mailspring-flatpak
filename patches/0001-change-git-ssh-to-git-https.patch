@@ -1,0 +1,124 @@
+From 243a9deb8f1746e1a9a005f5010d2d2a9c1ab862 Mon Sep 17 00:00:00 2001
+From: advaithm <advaith.madhukar@gmail.com>
+Date: Tue, 17 Aug 2021 17:40:10 +0530
+Subject: [PATCH 1/1] change git+ssh to git+https
+
+---
+ app/package-lock.json | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+diff --git a/app/package-lock.json b/app/package-lock.json
+index b1619cf2e..47a0207a9 100644
+--- a/app/package-lock.json
++++ b/app/package-lock.json
+@@ -95,7 +95,7 @@
+       }
+     },
+     "node_modules/@bengotow/slate-edit-list": {
+-      "resolved": "git+ssh://git@github.com/bengotow/slate-edit-list.git#b868e1088b44ad1adb2cb06bbbb847a2fef7edb5"
++      "resolved": "git+https://github.com/bengotow/slate-edit-list.git#b868e1088b44ad1adb2cb06bbbb847a2fef7edb5"
+     },
+     "node_modules/@felixrieseberg/spellchecker": {
+       "version": "4.0.12",
+@@ -878,7 +878,7 @@
+       }
+     },
+     "node_modules/debug": {
+-      "resolved": "git+ssh://git@github.com/emorikawa/debug.git#29685485665b44c42d33ebd7ed62570b21c6e4bd",
++      "resolved": "git+https://github.com/emorikawa/debug.git#29685485665b44c42d33ebd7ed62570b21c6e4bd",
+       "dependencies": {
+         "ms": "0.7.3"
+       }
+@@ -1094,7 +1094,7 @@
+       }
+     },
+     "node_modules/electron-spellchecker": {
+-      "resolved": "git+ssh://git@github.com/bengotow/electron-spellchecker.git#267df085fa4c1a5f5631e5f0ebd627890d59d670",
++      "resolved": "git+https://github.com/bengotow/electron-spellchecker.git#267df085fa4c1a5f5631e5f0ebd627890d59d670",
+       "dependencies": {
+         "@felixrieseberg/spellchecker": "4.0.12",
+         "bcp47": "1.1.2",
+@@ -3541,7 +3541,7 @@
+       }
+     },
+     "node_modules/slate": {
+-      "resolved": "git+ssh://git@github.com/bengotow/slate.git#cd6f40e8db9058f518c091cffe364608b3c858e6",
++      "resolved": "git+https://github.com/bengotow/slate.git#cd6f40e8db9058f518c091cffe364608b3c858e6",
+       "dependencies": {
+         "debug": "3.2.7",
+         "direction": "0.1.5",
+@@ -3611,7 +3611,7 @@
+       "integrity": "sha512-zm3gVmnGn0a9l/75REkAC0zYQGl3U/j2Z4p4pZ4rLupCptLM8iLWeGdn07V3JVCUA6n/80y9Mtv43Z9b1G/BAA=="
+     },
+     "node_modules/slate-react": {
+-      "resolved": "git+ssh://git@github.com/bengotow/slate.git#4eb9d59ec29bca6d7edf8e61283249cf81034d65",
++      "resolved": "git+https://github.com/bengotow/slate.git#4eb9d59ec29bca6d7edf8e61283249cf81034d65",
+       "dependencies": {
+         "debug": "3.2.7",
+         "get-window": "1.1.2",
+@@ -4354,7 +4354,7 @@
+       }
+     },
+     "node_modules/windows-shortcuts": {
+-      "resolved": "git+ssh://git@github.com/emorikawa/windows-shortcuts.git#b0a0fc7fb86fb03e06ddceb9cbd6c9c5c29e571e"
++      "resolved": "git+https://github.com/emorikawa/windows-shortcuts.git#b0a0fc7fb86fb03e06ddceb9cbd6c9c5c29e571e"
+     },
+     "node_modules/wordwrap": {
+       "version": "0.0.2",
+@@ -4418,7 +4418,7 @@
+       }
+     },
+     "@bengotow/slate-edit-list": {
+-      "version": "git+ssh://git@github.com/bengotow/slate-edit-list.git#b868e1088b44ad1adb2cb06bbbb847a2fef7edb5",
++      "version": "git+https://github.com/bengotow/slate-edit-list.git#b868e1088b44ad1adb2cb06bbbb847a2fef7edb5",
+       "from": "@bengotow/slate-edit-list@github:bengotow/slate-edit-list#b868e108"
+     },
+     "@felixrieseberg/spellchecker": {
+@@ -5051,7 +5051,7 @@
+       }
+     },
+     "debug": {
+-      "version": "git+ssh://git@github.com/emorikawa/debug.git#29685485665b44c42d33ebd7ed62570b21c6e4bd",
++      "version": "git+https://github.com/emorikawa/debug.git#29685485665b44c42d33ebd7ed62570b21c6e4bd",
+       "from": "debug@github:emorikawa/debug#nylas",
+       "requires": {
+         "ms": "0.7.3"
+@@ -5216,7 +5216,7 @@
+       }
+     },
+     "electron-spellchecker": {
+-      "version": "git+ssh://git@github.com/bengotow/electron-spellchecker.git#267df085fa4c1a5f5631e5f0ebd627890d59d670",
++      "version": "git+https://github.com/bengotow/electron-spellchecker.git#267df085fa4c1a5f5631e5f0ebd627890d59d670",
+       "from": "electron-spellchecker@github:bengotow/electron-spellchecker#267df08",
+       "requires": {
+         "@felixrieseberg/spellchecker": "4.0.12",
+@@ -7251,7 +7251,7 @@
+       }
+     },
+     "slate": {
+-      "version": "git+ssh://git@github.com/bengotow/slate.git#cd6f40e8db9058f518c091cffe364608b3c858e6",
++      "version": "git+https://github.com/bengotow/slate.git#cd6f40e8db9058f518c091cffe364608b3c858e6",
+       "from": "slate@github:bengotow/slate#cd6f40e8",
+       "requires": {
+         "debug": "3.2.7",
+@@ -7339,7 +7339,7 @@
+       "integrity": "sha512-zm3gVmnGn0a9l/75REkAC0zYQGl3U/j2Z4p4pZ4rLupCptLM8iLWeGdn07V3JVCUA6n/80y9Mtv43Z9b1G/BAA=="
+     },
+     "slate-react": {
+-      "version": "git+ssh://git@github.com/bengotow/slate.git#4eb9d59ec29bca6d7edf8e61283249cf81034d65",
++      "version": "git+https://github.com/bengotow/slate.git#4eb9d59ec29bca6d7edf8e61283249cf81034d65",
+       "from": "slate-react@github:bengotow/slate#0.45.1-react",
+       "requires": {
+         "debug": "3.2.7",
+@@ -7918,7 +7918,7 @@
+       }
+     },
+     "windows-shortcuts": {
+-      "version": "git+ssh://git@github.com/emorikawa/windows-shortcuts.git#b0a0fc7fb86fb03e06ddceb9cbd6c9c5c29e571e",
++      "version": "git+https://github.com/emorikawa/windows-shortcuts.git#b0a0fc7fb86fb03e06ddceb9cbd6c9c5c29e571e",
+       "from": "windows-shortcuts@emorikawa/windows-shortcuts#b0a0fc7"
+     },
+     "wordwrap": {
+-- 
+2.32.0
+

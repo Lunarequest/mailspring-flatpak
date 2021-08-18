@@ -1,0 +1,60 @@
+app-id: com.getmailspring.mailspring
+base: org.electronjs.Electron2.BaseApp
+base-version: "20.08"
+runtime: org.freedesktop.Platform
+runtime-version: "20.08"
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.node14
+command: start-github-desktop
+separate-locales: false
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --share=network
+  - --device=dri
+  - --filesystem=home
+  - --env=XDG_CURRENT_DESKTOP=Unity
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.freedesktop.secrets
+  - --talk-name=org.kde.StatusNotifierWatcher
+modules:
+  - shared-modules/libsecret/libsecret.json
+  - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
+  - name: Mailspring
+    buildsystem: simple
+    build-options:
+      # Add the node bin directory & yarn directory.
+      append-path: "/usr/lib/sdk/node14/bin:/app/yarn/bin:/run/build/Mailspring/flatpak-node/chromedriver"
+      env:
+        # Sets the directory where Node is located so way npm won't download the headers.
+        npm_config_nodedir: "/usr/lib/sdk/node14"
+        # Set the Electron cache directory.
+        ELECTRON_CACHE: "/run/build/Mailspring/flatpak-node/electron-cache"
+        # Skip Electron related downloads
+        ELECTRON_SKIP_BINARY_DOWNLOAD: "1"
+        CHROMEDRIVER_SKIP_DOWNLOAD: "true"
+    build-commands:
+      -
+      - touch .npmrc
+      - echo "cache=npm-cache" > .npmrc
+      - cp .npmrc  app/
+      - echo "cache=../npm-cache" > app/.npmrc
+      - npm install
+      - npm run-script build
+    sources:
+      - type: git
+        url: https://github.com/Foundry376/Mailspring.git
+        tag: 1.9.1
+        commit: 30ef802f845567e2423c4f950ea508753de63f0a
+      - type: git
+        url: https://github.com/Foundry376/Mailspring-Sync.git
+        commit: e079b209eb5e23195df59a12ffbac9503320029a
+        dest: mailsync
+      - type: patch
+        paths:
+          - patches/0001-change-git-ssh-to-git-https.patch
+      - generated-sources.json
+      - genrated-app-sources.json

@@ -37,7 +37,7 @@ modules:
         ELECTRON_SKIP_BINARY_DOWNLOAD: "1"
         CHROMEDRIVER_SKIP_DOWNLOAD: "true"
     build-commands:
-      -
+      - ./mailsync/build.sh
       - touch .npmrc
       - echo "cache=npm-cache" > .npmrc
       - cp .npmrc  app/
@@ -49,9 +49,6 @@ modules:
         url: https://github.com/Foundry376/Mailspring.git
         tag: 1.9.1
         commit: 30ef802f845567e2423c4f950ea508753de63f0a
-      - type: git
-        url: https://github.com/Foundry376/Mailspring-Sync.git
-        commit: e079b209eb5e23195df59a12ffbac9503320029a
         dest: mailsync
       - type: patch
         paths:
